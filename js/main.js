@@ -13,6 +13,24 @@ $( document ).ready(function() {
         greatest: 0,
         total: 0
     };
+  $("#login-form .btn-sm").click(function(){
+ $("#login-form").hide();//This says that when you click the login button, it hides the form.
+    $(".user-info").text("Welcome, " + userInfo.firstName +" "+ userInfo.lastName+"!");//This continues and says to replace the form with the text, but doesn't show the text yet.
+    $(".user-info").show();// This completes the function by showing the text.
+});
+  //lines 22-24 picks and shows the details by using parent and child element.
+  $(".view-details").click(function(event){ //selects the view details click throughouth the page and then sets a function that happens when the view details buttons are clicked.
+  var targetElement = event.target;
+  var childDetails = $(targetElement).parent().parent().children(".details");// created variable childDetails to simplify next code.  This variable defines each individual details elements with the parent parent children command.
+    if ( $(childDetails).is(":visible") === true){
+       $(childDetails).hide();
+  $(targetElement).text("View details");//Commands to hide the details if they are already shown.
+    }
+    else { $(childDetails).show();
+  $(targetElement).text("Hide details");//Commands to show the details if they are hidden.
+    }
+ 
+});
     // Place all your Javascript code inside this "document ready" function so
     // it does not run until the DOM is ready for Javascript manipulation.
 
