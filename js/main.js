@@ -70,6 +70,7 @@ $( document ).ready(function() {
     voteCounts.greatest++;
   }
      voteCounts.total++;
+     setTimeout(function(){ alert("Your vote has been counted"); }, 750);
        var percentGreat = (voteCounts.great/voteCounts.total)*100;
   var greatest = (voteCounts.greatest/voteCounts.total)*100;
         $(".great-progress").css("width", percentGreat+ "%");
