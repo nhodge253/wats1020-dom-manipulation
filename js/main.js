@@ -57,10 +57,10 @@ $( document ).ready(function() {
   $(targetElement).text("View details"+ "	\xBB");//Commands to hide the details if they are already shown. Also adds the >> sign back in using the \xBB code.
     }
     else { $(childDetails).show();
-  $(targetElement).text("Hide details"+ " \xBB");//Commands to show the details if they are hidden.
+  $(targetElement).text("Hide details"+ " \xBB");//Commands to show the details if they are hidden. Also adds the >> sign back in using the \xBB code.
     }
  
-});
+});//Here is what makes the voting work.  The first part captures the .vote class and then the second part tells it to do something when the user clicks the .vote class. the targetElement variable sets the the target = to what the user clicks.  The if statement commands the page to count the vote for whatever the user clicks.
    $(".vote").click(function (event) {
        var targetElement = event.target; 
    if ($(targetElement).data("vote") === "great") {
@@ -70,7 +70,9 @@ $( document ).ready(function() {
     voteCounts.greatest++;
   }
      voteCounts.total++;
+     //Added in an alert that pops up when vote is counted.
      setTimeout(function(){ alert("Your vote has been counted"); }, 750);
+     //These are the functions that calculates the percentage of votes.
        var percentGreat = (voteCounts.great/voteCounts.total)*100;
   var greatest = (voteCounts.greatest/voteCounts.total)*100;
         $(".great-progress").css("width", percentGreat+ "%");
