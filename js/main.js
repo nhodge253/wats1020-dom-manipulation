@@ -54,10 +54,10 @@ $( document ).ready(function() {
   var childDetails = $(targetElement).parent().parent().children(".details");// created variable childDetails to simplify next code.  This variable defines each individual details elements with the parent parent children command.
     if ( $(childDetails).is(":visible") === true){
        $(childDetails).hide();
-  $(targetElement).text("View details");//Commands to hide the details if they are already shown.
+  $(targetElement).text("View details"+ "	\xBB");//Commands to hide the details if they are already shown. Also adds the >> sign back in using the \xBB code.
     }
     else { $(childDetails).show();
-  $(targetElement).text("Hide details");//Commands to show the details if they are hidden.
+  $(targetElement).text("Hide details"+ " \xBB");//Commands to show the details if they are hidden.
     }
  
 });
